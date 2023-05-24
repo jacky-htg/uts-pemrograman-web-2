@@ -1,28 +1,27 @@
 <html>
-<head>
+  <head>
     <link rel="stylesheet" href="../style.css"/>
   </head>
-  
   <body>
     <?php require_once('../templates/header.php');?>
     <?php require_once('../templates/menu.php');?>
-    
     <section>
       <a href="./">Kembali ke halaman list mata kuliah</a>
-      <h2>Tambah Mata Kuliah Baru</h2>
-      <form action="./add.php" method="POST" class="form">
+      <h2>Edit Mata Kuliah</h2>
+      <form action="./edit.php" method="POST" class="form">
       <div>
         <label>Kode Mata Kuliah</label>
-        <input name="kode_matakuliah" required />
+        <input name="kode_matakuliah" required value="<?php echo $data['kode_matakuliah'];?>"/>
       </div>  
       <div>
         <label>Nama</label>
-        <input name="nama" required />
-        <input type="hidden" name="token" value="<?php echo $_SESSION['addmk'];?>"/>
-      </div>
+        <input name="nama" required value="<?php echo $data['nama'];?>"/>
+        <input name="id" type="hidden" value="<?php echo $data['id'];?>"/>
+        <input type="hidden" name="token" value="<?php echo $_SESSION['editmk'];?>"/>
+      </div>  
       <div>
         <label>Deskripsi</label>
-        <textarea name="deskripsi"></textarea>
+        <textarea name="deskripsi"><?php echo $data['nama'];?></textarea>
       </div>  
       <div><button type="submit">Submit</button></div>
       </form>
