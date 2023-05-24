@@ -25,8 +25,8 @@ try {
   $stmt->execute();
   $stmt->close();
   $db -> close();
-  header('Location: ./index.php?message=dosen berhasil dihapus');
   unset($_SESSION['deletedosen']);
+  header('Location: ./index.php?message=dosen berhasil dihapus');
   exit();
 
 } catch(Exception $e) {
