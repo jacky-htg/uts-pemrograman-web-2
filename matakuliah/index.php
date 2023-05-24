@@ -3,7 +3,7 @@ session_start();
 require_once('../helpers/config.php');
 
 $datetime = new DateTime();
-$_SESSION['deletematakuliah'] = $datetime->getTimestamp();
+$_SESSION['deletemk'] = $datetime->getTimestamp();
 
 try {
   $db = new mysqli($DB_host,$DB_user,$DB_pass,$DB_dbname);

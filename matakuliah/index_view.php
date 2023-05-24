@@ -47,7 +47,7 @@
               &nbsp; &nbsp; 
               <form action="./delete.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $data['id'];?>"/>
-                <input type="hidden" name="token" value="<?php echo $_SESSION['deletematakuliah'];?>"/>
+                <input type="hidden" name="token" value="<?php echo $_SESSION['deletemk'];?>"/>
                 <button type="button" onclick="if(confirm('Yakin ingin menghapus data <?php echo $data['id'];?>?')) this.parentElement.submit()">Hapus</button>
               </form>
             </td>
