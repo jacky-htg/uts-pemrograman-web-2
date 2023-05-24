@@ -43,7 +43,7 @@ try {
   $db -> close();
 
 } catch(Exception $e) {
-  echo "Failed to connect to MySQL ". $e->getMessage();
+  echo 'Failed to connect to MySQL '. $e->getMessage();
   exit(); 
 }
 
@@ -91,10 +91,10 @@ function getLinkPagination($page, $sort, $where) {
 
   $url = [];
   foreach ($params as $i=>$v) {
-    $url[] = $i . "=" . $v;
+    $url[] = $i . '=' . $v;
   }
   
-  return "./index.php?".implode("&", $url);
+  return './index.php?'.implode('&', $url);
 }
 
 include('index_view.php');
