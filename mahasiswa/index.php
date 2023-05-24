@@ -51,7 +51,7 @@ function getCount($db, $condition, $where) {
   $stmt = $db->prepare("SELECT COUNT(*) jumlah FROM mahasiswa $condition");
   if ($condition) {
     $search = "%{$where['search']}%";
-    $stmt->bind_param("ss", $search, $search);
+    $stmt->bind_param('sss', $search, $search, $search);
   }
   $stmt->execute();
     
