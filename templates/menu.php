@@ -1,4 +1,10 @@
 <?php
+  // protect direct access
+  if (str_contains($_SERVER['REQUEST_URI'], '/templates/menu.php')) {
+    header('Location: /');
+    exit();
+  }
+  
   $menu = 'home';
   if (str_contains($_SERVER['REQUEST_URI'], 'mahasiswa')) {
     $menu = 'mahasiswa';

@@ -1,3 +1,10 @@
+<?php
+// protect direct access
+if (str_contains($_SERVER['REQUEST_URI'], '/templates/toast.php')) {
+  header('Location: /');
+  exit();
+}
+?>
       <?php if (isset($_GET['message']) || isset($_GET['error'])) : ?>
         <div id="alert" class="alert <?php echo isset($_GET['error']) ? 'alert-red' : 'alert-green';?>">
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>

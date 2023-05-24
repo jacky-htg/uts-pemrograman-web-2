@@ -1,3 +1,10 @@
+<?php
+// protect direct access
+if (str_contains($_SERVER['REQUEST_URI'], '/templates/pagination.php')) {
+  header('Location: /');
+  exit();
+}
+?>
       <div class="pagination">
         <a href="<?php echo getLinkPagination(1, $sort, $where);?>">&laquo;</a>
         <?php if ($pagination['start']-10 > 1) : ?>
