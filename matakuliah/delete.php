@@ -31,6 +31,6 @@ try {
 
 } catch(Exception $e) {
   unset($_SESSION['deletemk']);
-  header('Location: index.php?error=Mata kuliah gagal dihapus');
+  header('Location: index.php?error=Mata kuliah gagal dihapus: ' . $e->getMessage());
   exit();
 }

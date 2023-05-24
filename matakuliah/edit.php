@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   } catch(Exception $e) {
     unset($_SESSION['editmk']);
-    header('Location: ./index.php?error=Mata kuliah gagal diupdate');
+    header('Location: ./index.php?error=Mata kuliah gagal diupdate:' . $e->getMessage());
     exit();
   }
 } else {

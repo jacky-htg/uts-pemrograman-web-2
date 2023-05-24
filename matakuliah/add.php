@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   } catch(Exception $e) {
     unset($_SESSION['addmk']);
-    header('Location: ./index.php?error=Mata kuliah gagal ditambahkan'); 
+    header('Location: ./index.php?error=Mata kuliah gagal ditambahkan: ' . $e->getMessage()); 
     exit();
   }
 } 
