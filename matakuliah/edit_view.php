@@ -21,7 +21,7 @@
       </div>  
       <div>
         <label>Deskripsi</label>
-        <textarea name="deskripsi"><?php echo $data['nama'];?></textarea>
+        <textarea name="deskripsi"><?php echo $data['deskripsi'];?></textarea>
       </div>  
       <div><button type="submit">Submit</button></div>
       </form>
