@@ -2,9 +2,9 @@
 Aplikasi CRUD sederhana menggunakan PHP Native dan Mysql sebagai bagian dari UTS Bahasa Pemrograman 2 PJJ Informatika Universitas Siber Asia.
 
 ## Fitur
-[x] Mahasiswa
-[x] Dosen
-[x] Mata Kuliah
+- [x] Mahasiswa
+- [x] Dosen
+- [x] Mata Kuliah
 
 ## Sub Fitur
 - List data
