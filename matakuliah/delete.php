@@ -25,8 +25,8 @@ try {
   $stmt->execute();
   $stmt->close();
   $db -> close();
-  header('Location: ./index.php?message=mata kuliah berhasil dihapus');
   unset($_SESSION['deletemk']);
+  header('Location: ./index.php?message=mata kuliah berhasil dihapus');
   exit();
 
 } catch(Exception $e) {
