@@ -1,13 +1,12 @@
 <?php
 session_start();
 require_once('../helpers/config.php');
+require_once('../helpers/connection.php');
 
 $datetime = new DateTime();
 $_SESSION['deletedosen'] = $datetime->getTimestamp();
 
 try {
-  $db = new mysqli($DB_host,$DB_user,$DB_pass,$DB_dbname);
-
   $page = isset($_GET['page']) && $_GET['page'] > 0 ? $_GET['page'] : 1;
   $limit = 10;
   $offset = ($page-1) * $limit;
@@ -59,7 +58,7 @@ try {
   $db -> close();
 
 } catch(Exception $e) {
-  echo 'Failed to connect to MySQL '. $e->getMessage();
+  echo 'Gagal mendapatkan data: '. $e->getMessage();
   exit(); 
 }
 
