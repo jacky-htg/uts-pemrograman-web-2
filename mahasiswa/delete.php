@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../helpers/config.php');
+require_once('../helpers/connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   die('method is not allowed');
@@ -17,8 +18,6 @@ if ($_POST['token'] != $_SESSION['deletemhs']) {
 } 
 
 try {
-  $db = new mysqli($DB_host,$DB_user,$DB_pass,$DB_dbname);
-  
   $query = 'DELETE FROM mahasiswa WHERE id=?';
   $stmt = $db->prepare($query);
   $stmt->bind_param('s', $_POST['id']);
@@ -31,6 +30,6 @@ try {
 
 } catch(Exception $e) {
   unset($_SESSION['deletemhs']);
-  header('Location: index.php?error=Mata kuliah gagal dihapus: ' . $e->getMessage());
+  header('Location: index.php?error=Mahasiswa gagal dihapus: ' . $e->getMessage());
   exit();
 }

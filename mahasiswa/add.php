@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../helpers/config.php');
+require_once('../helpers/connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   try {
@@ -9,8 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       header('Location: ./index.php?error=Invalid Token'); 
       exit();
     } 
-    $db = new mysqli($DB_host,$DB_user,$DB_pass,$DB_dbname);
-
     $query = 'INSERT INTO mahasiswa (nama, nim, program_studi) VALUES(?, ?, ?)';
     $stmt = $db->prepare($query);
     $stmt->bind_param('sss', $_POST['nama'], $_POST['nim'], $_POST['program_studi']);

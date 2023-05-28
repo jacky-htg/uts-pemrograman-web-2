@@ -5,9 +5,9 @@ require_once('../helpers/config.php');
 $datetime = new DateTime();
 $_SESSION['deletemhs'] = $datetime->getTimestamp();
 
-try {
-  $db = new mysqli($DB_host,$DB_user,$DB_pass,$DB_dbname);
+require_once('../helpers/connection.php');
 
+try {
   $page = isset($_GET['page']) && $_GET['page'] > 0 ? $_GET['page'] : 1;
   $limit = 10;
   $offset = ($page-1) * $limit;
@@ -43,7 +43,7 @@ try {
   $db -> close();
 
 } catch(Exception $e) {
-  echo 'Failed to connect to MySQL '. $e->getMessage();
+  echo 'Gagal mendapatkan data: '. $e->getMessage();
   exit(); 
 }
 
